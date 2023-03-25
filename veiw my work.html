@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background:linear-gradient(0deg, #f7f7f7 65%, pink 0%);
+  overflow:hidden;
+  min-height:100vh;
+}
+.container{
+  height:200px;
+  width:200px;
+  margin:200px auto;
+  perspective: 1000px;
+  position:relative;
+}
+.container .slides{
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation:animate 10s linear infinite;
+}
+@keyframes animate {
+  from{
+    transform:rotateY(0deg);
+  }
+  to{
+    transform:rotateY(360deg);
+  }
+}
+.container:hover .slides{
+  animation-play-state: paused;
+}
+.container .slides > img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+  image-rendering:auto;
+  position:absolute;
+  box-shadow:0px 0px 5px gray;
+}
+.slides > img:nth-child(1){
+  transform:rotateY(45deg) translateZ(270px);
+}
+.slides > img:nth-child(2){
+  transform:rotateY(90deg) translateZ(270px);
+}
+.slides > img:nth-child(3){
+  transform:rotateY(135deg) translateZ(270px);
+}
+.slides > img:nth-child(4){
+  transform:rotateY(180deg) translateZ(270px);
+}
+.slides > img:nth-child(5){
+  transform:rotateY(225deg) translateZ(270px);
+}
+.slides > img:nth-child(6){
+  transform:rotateY(270deg) translateZ(270px);
+}
+.slides > img:nth-child(7){
+  transform:rotateY(315deg) translateZ(270px);
+}
+.slides > img:nth-child(8){
+  transform:rotateY(360deg) translateZ(270px);
+}
+.container .slides > img:hover{
+  transition:all .2s ease-in;
+  cursor:pointer;
+  box-shadow:0px 0px 10px white;
+  bottom:20px;
+  -webkit-box-reflect:below 25px linear-gradient(0deg, white 0%, transparent 20%);
+}
+</style>
+  </head>
+  <body>
+<div class="container">
+  <div class="slides">
+    <img src="Planet Flower-1.png" alt="">
+    <img src="Planet Lights.png" alt="">
+    <img src="IMG-20230318-WA0101.jpg" alt="">
+    <img src="IMG-20230321-WA0019.jpg" alt="">
+    <img src="SAASDASHBOARD.png" alt="">
+    <img src="david-pupaza-Q9-QEy1_jYI-unsplash.jpg" alt="">
+    <img src="Bank Website.png" alt="">
+    <img src="boitumelo-phetla-o_tcYADlSt8-unsplash.jpg" alt="">
+  </div>
+</div>
+  </body>
+</html>
